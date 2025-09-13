@@ -39,7 +39,7 @@ TEXT="My EC2 Instance"
 # AWS provides a special internal web address that only works from inside EC2 instances
 # This address (169.254.169.254) gives you information about the current instance
 
-# Base URL and header setup for metadata service
+# Base URL and header variables for metadata service
 BASE_URL="http://169.254.169.254/latest"
 HEADERS="X-aws-ec2-metadata-token"
 
@@ -62,7 +62,7 @@ MAC_ID=$(curl -H "$HEADERS: $TOKEN" -s "$BASE_URL/meta-data/network/interfaces/m
 VPC_ID=$(curl -H "$HEADERS: $TOKEN" -s "$BASE_URL/meta-data/network/interfaces/macs/${MAC_ID}/vpc-id")
 
 # Get instance name from tags
-INSTANCE_NAME=$(curl -H "$HEADERS: $TOKEN" -s "$BASE_URL/meta-data/tags/instance/Name")
+HOST_NAME=$(hostname -f)
 
 ####################################################################
 # Here we create an HTML web page with the collected information
@@ -83,7 +83,7 @@ cat << EOF > /var/www/html/index.html
         p { margin: 10px 0; }
         img { max-width: 300px; margin: 20px 0; }
     </style>
-    
+
 </head>
 <body>
     <h1>${TEXT}</h1>
@@ -92,7 +92,7 @@ cat << EOF > /var/www/html/index.html
     <img src="${IMAGE}" alt="Instance Image">
     
     <h2>Instance Details</h2>
-    <p><strong>Name:</strong> ${INSTANCE_NAME}</p>
+    <p><strong>Hostname:</strong> ${HOST_NAME}</p>
     <p><strong>Private IP:</strong> ${LOCAL_IP}</p>
     <p><strong>Availability Zone:</strong> ${AZ}</p>
     <p><strong>VPC ID:</strong> ${VPC_ID}</p>

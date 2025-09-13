@@ -30,7 +30,7 @@ AWS global infrastructure is spread throughout the world and coupled together wi
 
 **Key characteristics:**
 - Has dedicated engineering, support, compliance, and security teams on-site
-- Follows strict compliance and physical security requirements that CSPs (Cloud Service Providers, aka public cloud) must adhere to
+- Follows strict compliance and physical security requirements that CSPs (Cloud Service Providers, aka public cloud) must adhere to:
 
 **Compliance Frameworks:**
 - **Governmental:** FedRAMP, DoD IL4/IL5
@@ -76,12 +76,12 @@ AWS global infrastructure is spread throughout the world and coupled together wi
 - *Sometimes we may just call it an "instance" or "EC2" - while not technically precise, everyone understands the meaning*
 
 **Important Characteristics:**
-- EC2 Instances are **Zonal Resources** - they exist in specific AZs, not regions
+- EC2 Instances are **Zonal Resources**- they exist in specific AZs, not regions
 - An EC2 instance could never be in `us-east-1`, but it could be in `us-east-1a`
 - Many other AWS services run on EC2 "behind the scenes"
 
 **Common Terms:**
-- **AMI:** Amazon Machine Image - a pre-made template for a computer's OS and basic programs
+- **AMI:** Amazon Machine Image- a pre-made template for a computer's OS and basic programs
 - **Instance Type:** Determines how much vCPU, memory, network performance, and possibly GPUs are allocated to the instance (*i.e., how powerful it is*)
 
 **Resources:**
@@ -122,12 +122,12 @@ AWS global infrastructure is spread throughout the world and coupled together wi
 - Control which resources can access the internet and which cannot
 
 **Security Groups:** *Virtual firewalls for EC2 instances and other resources inside a VPC*
-- Provide network security - we only want certain communications to occur
+- Provide network security- we only want certain communications to occur
 - *Technical note: They are L3/L4 protocol firewalls with L5 awareness for stateful connections*
 - **Regional resources** scoped to specific VPCs
   - *A security group in one VPC cannot be used in another*
   - *Example: SG-A in VPC-1 cannot be used by the default VPC*
-- Cannot control traffic for certain services (Amazon DNS, DHCP, IMDS, time sync service, etc.)
+- Cannot control traffic for certain services (Amazon DNS, AWS DHCP, IMDS, time sync service, etc.)
 
 **Resources:**
 - [Security Group Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html)
@@ -208,7 +208,7 @@ Today, the "language" we use is typically called **bash**.
    - **Name and Tags:** Enter instance name, add relevant tags
    - **AMI Selection:** Review AMI menu, ensure defaults are selected, collapse
    - **Instance Type:** Review instance type menu, ensure proper sizing, collapse
-   - **Key Pair:** Select "None", collapse
+   - **Key Pair:** Select "Proceed without key pair", collapse
    
 3. **Network Settings:**
    - **Don't click "Edit"**
@@ -234,11 +234,19 @@ Today, the "language" we use is typically called **bash**.
 
 ### Step 4: Test Your Web Server
 
-1. Wait for the instance to pass initialization checks
+1. Wait for the instance to pass status checks
 2. Copy the instance's **public DNS address**
 3. Open your web browser
 4. Navigate to: `http://<public-DNS-address>`
    - **Important:** Use `http://` prefix, not `https://`
+
+---
+
+## Deliverables
+
+1) Working hyperlink delivered in the chat. If I can't click on it then it isn't correct. 
+
+2) Screenshot of EC2 Instance in "stopped" state. 
 
 ---
 
