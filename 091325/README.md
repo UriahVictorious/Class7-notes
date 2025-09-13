@@ -10,6 +10,7 @@
 - [Architecture](#architecture)
 - [Scripts](#scripts)
 - [Lab Instructions](#lab-instructions)
+- [Deliverables](#deliverables)
 - [Troubleshooting](#troubleshooting)
 - [Teardown](#teardown)
 
