@@ -157,8 +157,8 @@ header h1 {
     position: relative;
 }
 
-.gallery-item::after {
-    content: '';
+/* Overlay background */
+.gallery-img-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -174,49 +174,26 @@ header h1 {
     justify-content: center;
 }
 
-.gallery-item:hover::after {
-    opacity: 1;
-    visibility: visible;
-}
-
-.gallery-item::before {
-    content: '';
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 90vw;
-    height: 90vh;
-    max-width: 1200px;
-    max-height: 800px;
-    background-image: var(--hover-image);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transform: translate(-50%, -50%) scale(0.8);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 1001;
+/* Large image container */
+.gallery-img-large {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
     border-radius: 8px;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
 }
 
-.gallery-item:hover::before {
+/* Show overlay only when hovering over the small image */
+.gallery-img:hover + .gallery-img-overlay,
+.gallery-img-overlay:hover {
     opacity: 1;
     visibility: visible;
-    transform: translate(-50%, -50%) scale(1);
 }
 
-/* Set hover images using CSS custom properties */
-.gallery-item:nth-child(1) {
-    --hover-image: url('1.jpg');
-}
-
-.gallery-item:nth-child(2) {
-    --hover-image: url('2.jpg');
-}
-
-.gallery-item:nth-child(3) {
-    --hover-image: url('3.jpg');
+.gallery-img:hover + .gallery-img-overlay .gallery-img-large,
+.gallery-img-overlay:hover .gallery-img-large {
+    transform: scale(1);
 }
 
 .gallery-item p {
