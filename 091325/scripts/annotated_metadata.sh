@@ -28,8 +28,8 @@ systemctl enable httpd
 
 # Set the image URL as a variable to make it easy to change later
 # You can modify this URL to use any image you want on your webpage
-IMAGE="https://www.w3schools.com/images/w3schools_green.jpg"
-TEXT="My EC2 Instance"
+IMAGE="https://www.cutiecentral.com/kathryn-celestre/#bwg114/21506"
+TEXT="I found my wife on a party yacht in Colombia! Her name is Kathryn Celestre!"
 
 ####################################################################
 # Here we get the metadata for the EC2 instance
