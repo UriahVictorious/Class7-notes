@@ -28,7 +28,7 @@ systemctl enable httpd
 
 # Set the image URL as a variable to make it easy to change later
 # You can modify this URL to use any image you want on your webpage
-IMAGE="https://www.cutiecentral.com/kathryn-celestre/#bwg114/21506"
+IMAGE="https://www.cutiecentral.com/wp-content/ccuploads/photo-gallery/Kathryn_Celestre/kathyrn_celestre_19991128012014253339.jpg?bwg=1703867351"
 TEXT="I found my wife on a party yacht in Colombia! Her name is Kathryn Celestre!"
 
 ####################################################################
