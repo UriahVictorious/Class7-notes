@@ -29,7 +29,7 @@ systemctl enable httpd
 # Set the image URL as a variable to make it easy to change later
 # You can modify this URL to use any image you want on your webpage
 IMAGE="https://t4.ftcdn.net/jpg/02/38/09/39/360_F_238093946_0T1s90e2drQSPGQt9EmHMPzHbT2QVGjM.jpg"
-TEXT="I, Vincent Woods -aka- Uriah Victorious, thank Theo, T.I.Q.S., and John Sweeney for teaching me about EC2's in AWS. One step closer to escaping Keisha! With this class, I will net 225K per year!"
+TEXT="I, Vincent Woods, thank Theo, T.I.Q.S., and John Sweeney for teaching me about EC2's in AWS. One step closer to escaping Keisha! With this class, I will net 225K per year!"
 
 ####################################################################
 # Here we get the metadata for the EC2 instance
